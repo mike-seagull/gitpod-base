@@ -11,4 +11,6 @@ RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/
     -p terraform \
     -p https://github.com/zsh-users/zsh-autosuggestions \
     -p https://github.com/zsh-users/zsh-completions
-ENTRYPOINT [ "/usr/bin/zsh" ]
+RUN echo "if [ -t 1 ]; then" >> ~/.bashrc
+RUN echo "exec zsh" >> ~/.bashrc
+RUN echo "fi" >> ~/.bashrc
