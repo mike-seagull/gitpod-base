@@ -1,11 +1,14 @@
-name: Create and publish tailscale Docker image
+name: tailscale docker image
 
 on:
   push:
     paths:
       - tailscale.Dockerfile
     branches: ["master"]
-
+  workflow_run:
+    workflows: ["base docker image"]
+    types:
+      - completed
 jobs:
   tailscale:
     runs-on: ubuntu-latest
