@@ -1,4 +1,4 @@
-FROM ghcr.io/mike-seagull/gitpod-base:master
+FROM ghcr.io/mike-seagull/gitpod-images:base
 
 USER root
 
