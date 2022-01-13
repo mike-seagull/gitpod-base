@@ -2,8 +2,6 @@ name: base docker image
 
 on:
   push:
-    paths:
-      - base.Dockerfile
     branches: ["master"]
 
 jobs:
