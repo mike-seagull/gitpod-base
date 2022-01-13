@@ -1,7 +1,9 @@
-name: Create and publish a Docker image
+name: Create and publish a gitpod-base Docker image
 
 on:
   push:
+    paths:
+      - base.Dockerfile
     branches: ["master"]
 
 jobs:
@@ -26,13 +28,13 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ghcr.io/${{ github.repository }}
+          images: ghcr.io/${{ github.repository_owner }}/gitpod-base
 
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
           context: .
-          file: .gitpod.Dockerfile
+          file: base.Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
