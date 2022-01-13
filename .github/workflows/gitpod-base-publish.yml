@@ -7,7 +7,7 @@ on:
     branches: ["master"]
 
 jobs:
-  build-and-push-image:
+  gitpod-base:
     runs-on: ubuntu-latest
     permissions:
       contents: read
