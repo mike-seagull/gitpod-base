@@ -1,4 +1,6 @@
 FROM gitpod/workspace-full:latest
+RUN brew install terraform
+RUN brew install ansible
 RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.2/zsh-in-docker.sh)" -- \
     -t fishy \
     -p ubuntu \
