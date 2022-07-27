@@ -10,7 +10,9 @@ RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/
     -p golang \
     -p https://github.com/zsh-users/zsh-autosuggestions \
     -p https://github.com/zsh-users/zsh-completions \
-    -a 'export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#757575"'
+    -a 'export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#757575"' \
+    -a 'alias gtp="/bin/gp"'
+
 RUN echo "if [ -t 1 ]; then" >> ~/.bashrc
 RUN echo "exec zsh" >> ~/.bashrc
 RUN echo "fi" >> ~/.bashrc
