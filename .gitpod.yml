@@ -3,4 +3,4 @@ github:
     master: true
     branches: true
 image:
-  file: tailscale.Dockerfile
+  file: base.Dockerfile
